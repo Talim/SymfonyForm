@@ -1,0 +1,16 @@
+
+{% extends 'AppBundle::layout.html.twig' %}
+{% block title %} Deux {% endblock %}
+{% block css %}
+    {% stylesheets '@AppBundle/public/structure.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
+{% endblock %}
+{% block head %} tete à l'envers {% endblock %}
+{% block body %} <h1>{{ uneEntree }}</h1> {% endblock %}
+{% block widgets %} {{ form(leFormulaire) }} {% endblock %}
+{% block liens %}
+    <li><a href="{{ path('lectureCtrl_index') }}"> Index</a></li>
+    <li><a href="{{ path('appBundle_afficheEmpParam') }}"> Exercice Paramètres</a></li>
+    <li><a href="{{ path('appBundle_afficheEmpTwig') }}"> Exercice Twig</a></li>
+{% endblock %}
